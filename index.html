@@ -363,34 +363,40 @@
     e.preventDefault();
 
     const nama = document.getElementById('nama').value;
-    const hadir = document.getElementById('kehadiran').value;
+    const kehadiran = document.getElementById('kehadiran').value;
     const pesan = document.getElementById('pesan').value;
 
     const data = {
         nama: nama,
-        kehadiran: hadir,
-        pesan: pesan
+        pesan: pesan,
+        kehadiran: kehadiran
     };
 
     fetch("https://script.google.com/macros/s/AKfycbwbp3lIe2Zuy68eVwDrFv-2nrQZfftEnN4zZsX7undJ1gr2Ew2Gtc9ayLWpUQGTs_eX/exec", {
         method: "POST",
-        mode: "no-cors",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(response => {
+
+        // tampilkan di guestbook website
+        const newMsg = document.createElement('div');
+        newMsg.classList.add('msg-item');
+        newMsg.innerHTML = `<h4>${nama} <span class="badge">${kehadiran}</span></h4><p>${pesan}</p>`;
+
+        const container = document.getElementById('guestbook-container');
+        container.insertBefore(newMsg, container.firstChild);
+
+        alert("Terima kasih! Pesan dan konfirmasi Anda berhasil dikirim.");
+        document.getElementById('rsvp-form').reset();
+    })
+    .catch(err => {
+        alert("Terjadi kesalahan mengirim data.");
+        console.log(err);
     });
-
-    // tampilkan di guestbook website
-    const newMsg = document.createElement('div');
-    newMsg.classList.add('msg-item');
-    newMsg.innerHTML = `<h4>${nama} <span class="badge">${hadir}</span></h4><p>${pesan}</p>`;
-
-    const container = document.getElementById('guestbook-container');
-    container.insertBefore(newMsg, container.firstChild);
-
-    alert("Terima kasih! Pesan dan konfirmasi Anda berhasil dikirim.");
-    this.reset();
 });
     </script>
 
