@@ -271,17 +271,7 @@
                 <button type="submit" class="btn-submit">Kirim Ucapan</button>
             </form>
 
-        <div class="guestbook-list animate" id="guestbook-container">
-            <!-- Dummy data ucapan -->
-            <div class="msg-item">
-                <h4>Andi Pratama <span class="badge">Hadir</span></h4>
-                <p>Selamat menempuh hidup baru Romeo & Juliet! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.</p>
-            </div>
-            <div class="msg-item">
-                <h4>Siti Aminah <span class="badge">Tidak Hadir</span></h4>
-                <p>Maaf belum bisa hadir, doa terbaik untuk kalian berdua. Bahagia selalu ya!</p>
-            </div>
-        </div>
+       <div class="guestbook-list animate" id="guestbook-container"></div>
     </section>
 
     <footer>
@@ -387,6 +377,29 @@
 
     alert("Terima kasih! Pesan berhasil dikirim.");
     this.reset();
+});
+
+        fetch("https://script.google.com/macros/s/AKfycbz5jT0efmVlJTe1sVX31qm7J0DEh0K-sgPR9pLY7Zyhdgr9FXDDBw2Wexw9KLsK3UVC/exec")
+.then(res => res.json())
+.then(data => {
+
+    const container = document.getElementById("guestbook-container");
+    container.innerHTML = "";
+
+    data.reverse().forEach(item => {
+
+        const el = document.createElement("div");
+        el.classList.add("msg-item");
+
+        el.innerHTML = `
+            <h4>${item.nama} <span class="badge">${item.kehadiran}</span></h4>
+            <p>${item.pesan}</p>
+        `;
+
+        container.appendChild(el);
+
+    });
+
 });
     </script>
 
