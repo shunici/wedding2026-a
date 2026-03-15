@@ -260,39 +260,16 @@
     <!-- 9. RSVP & GUESTBOOK -->
     <section class="event-bg">
         <h2 class="section-title animate">RSVP & Ucapan</h2>
-     document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const nama = document.getElementById('nama').value;
-    const hadir = document.getElementById('kehadiran').value;
-    const pesan = document.getElementById('pesan').value;
-
-    const data = {
-        nama: nama,
-        kehadiran: hadir,
-        pesan: pesan
-    };
-
-    fetch("https://script.google.com/macros/s/AKfycbwbp3lIe2Zuy68eVwDrFv-2nrQZfftEnN4zZsX7undJ1gr2Ew2Gtc9ayLWpUQGTs_eX/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
-
-    // tampilkan di guestbook website
-    const newMsg = document.createElement('div');
-    newMsg.classList.add('msg-item');
-    newMsg.innerHTML = `<h4>${nama} <span class="badge">${hadir}</span></h4><p>${pesan}</p>`;
-
-    const container = document.getElementById('guestbook-container');
-    container.insertBefore(newMsg, container.firstChild);
-
-    alert("Terima kasih! Pesan dan konfirmasi Anda berhasil dikirim.");
-    this.reset();
-});
+        <form id="rsvp-form" class="rsvp-form animate"> 
+            <input type="text" id="nama" placeholder="Nama Lengkap" required>
+             <select id="kehadiran" required> 
+                 <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                  <option value="Hadir">Hadir</option> 
+                  <option value="Tidak Hadir">Maaf, Tidak Bisa Hadir</option>
+            </select>
+                  <textarea id="pesan" rows="4" placeholder="Tulis ucapan & doa restu..." required></textarea>
+                <button type="submit" class="btn-submit">Kirim Ucapan</button>
+            </form>
 
         <div class="guestbook-list animate" id="guestbook-container">
             <!-- Dummy data ucapan -->
@@ -382,7 +359,7 @@
         }
 
         // 6. Handle Form RSVP & Tambah Ucapan ke Guestbook
-      document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const nama = document.getElementById('nama').value;
