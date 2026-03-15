@@ -361,7 +361,7 @@
     formData.append("kehadiran", kehadiran);
     formData.append("pesan", pesan);
 
-    fetch("https://script.google.com/macros/s/AKfycbz5jT0efmVlJTe1sVX31qm7J0DEh0K-sgPR9pLY7Zyhdgr9FXDDBw2Wexw9KLsK3UVC/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwN7yERnqUxVrJ64mDxZs8eyAhwRDAZ_KTW5ZbcAfX5r-ElUo-7ePm9qf9dIwo316yM/exec", {
         method: "POST",
         mode: "no-cors",
         body: formData
@@ -378,10 +378,8 @@
     alert("Terima kasih! Pesan berhasil dikirim.");
     this.reset();
 });
-
-        fetch("https://script.google.com/macros/s/AKfycbz5jT0efmVlJTe1sVX31qm7J0DEh0K-sgPR9pLY7Zyhdgr9FXDDBw2Wexw9KLsK3UVC/exec")
-.then(res => res.json())
-.then(data => {
+// querii
+        function loadGuestbook(data){
 
     const container = document.getElementById("guestbook-container");
     container.innerHTML = "";
@@ -400,8 +398,8 @@
 
     });
 
-});
+}
     </script>
-
+<script src="https://script.google.com/macros/s/AKfycbwN7yERnqUxVrJ64mDxZs8eyAhwRDAZ_KTW5ZbcAfX5r-ElUo-7ePm9qf9dIwo316yM/exec?callback=loadGuestbook"></script>
 </body>
 </html>
