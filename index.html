@@ -8,7 +8,7 @@
     <!-- SEO & Social Media -->
     <meta property="og:title" content="Ani & Andhika Wedding">
     <meta property="og:description" content="Undangan Pernikahan Andhika & Ani">
-    <meta property="og:image" content="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/thumbnail.jpeg">
+    <meta property="og:image" content="https://raw.githubusercontent.com/shunici/wedding2026-b/refs/heads/main/mempelai.jpg">
     <meta property="og:type" content="website">
 
     <!-- Fonts -->
@@ -83,6 +83,14 @@
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: rgba(124, 58, 237, 0.3);
             border-radius: 10px;
+        }
+        /* Custom scrollbar hiding utilities */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
     </style>
 </head>
@@ -236,20 +244,10 @@
                             <i data-lucide="clock" class="w-5 h-5 text-violet-400 shrink-0"></i>
                             <div>
                                 <p class="font-bold text-white text-sm">Rabu, 10 Juni 2026</p>
-                                <p class="text-slate-400 text-sm">09.00 WITA - Selesai</p>
+                     
                             </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-violet-400 shrink-0"></i>
-                            <div>
-                                <p class="font-bold text-white text-sm">Kediaman Mempelai Pria</p>
-                                <p class="text-slate-400 text-xs text-slate-300 leading-relaxed">JL. Ir PM Noor Aranio Sungai Kembang Rt 03 Rw 01 Kab. Banjar - Kalimantan Selatan</p>
-                            </div>
-                        </div>
+                        </div>                      
                     </div>
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Ani+%26+Andhika&dates=20260610T020000Z/20260610T040000Z" target="_blank" class="inline-block px-5 py-2 bg-violet-600/20 text-violet-300 rounded-lg text-xs font-medium">
-                        Simpan ke Kalender
-                    </a>
                 </div>
 
                 <!-- Resepsi -->
@@ -291,17 +289,6 @@
         </div>
     </section>
 
-    <!-- Denah Lokasi -->
-    <section class="px-6 pb-24">
-        <div class="max-w-xl mx-auto text-center space-y-4 reveal">
-            <h3 class="font-serif text-2xl text-white italic">Denah Lokasi</h3>
-            <div class="glass p-2 rounded-[2rem] overflow-hidden group">
-                <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/denahniko(1).png" onclick="openLightbox('denah.jpg')" class="w-full h-auto cursor-pointer object-cover rounded-[1.8rem] transition-transform duration-500 group-hover:scale-[1.02]" alt="Denah Lokasi">
-            </div>
-            <p class="text-xs text-slate-500 italic">Klik gambar denah untuk memperbesar</p>
-        </div>
-    </section>
-
     <!-- 5. GALLERY SECTION -->
     <section class="py-24 px-6 bg-slate-900/10">
         <div class="max-w-6xl mx-auto space-y-12">
@@ -311,62 +298,88 @@
                 <p class="text-slate-400 text-sm max-w-md mx-auto">Beberapa momen indah yang menjadi bagian dari perjalanan cinta kami.</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-                <!-- Image 1 -->
-                <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(1).jpeg', 0)">
-                    <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(1).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 1" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                        <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+            <!-- Swipe / Scroll Gallery on Mobile, Grid on Desktop -->
+            <div class="relative group">
+                <div id="swipe-gallery" class="flex overflow-x-auto md:grid md:grid-cols-4 gap-4 pb-4 md:pb-0 scroll-smooth snap-x snap-mandatory scrollbar-hide reveal select-none cursor-grab active:cursor-grabbing">
+
+                    <!-- Image 1 -->
+                    <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg w-[80vw] sm:w-[50vw] md:w-auto shrink-0 snap-center" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(8).jpeg', 7)">
+                        <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(8).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none" alt="Gallery 8" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                            <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>  
+                    <!-- Image 2 -->
+                    <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg w-[80vw] sm:w-[50vw] md:w-auto shrink-0 snap-center" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(2).jpeg', 1)">
+                        <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(2).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none" alt="Gallery 2" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                            <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                        </div>
                     </div>
-                </div>   
-                <!-- Image 2 -->
-                <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(2).jpeg', 1)">
-                    <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(2).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 2" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                        <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                    <!-- Image 3 -->
+                    <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg w-[80vw] sm:w-[50vw] md:w-auto shrink-0 snap-center" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(3).jpeg', 2)">
+                        <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(3).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none" alt="Gallery 3" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                            <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                        </div>
                     </div>
+                    <!-- Image 4 -->
+                    <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg w-[80vw] sm:w-[50vw] md:w-auto shrink-0 snap-center" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(4).jpeg', 3)">
+                        <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(4).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none" alt="Gallery 4" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                            <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <!-- Image 5 -->
+                    <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg w-[80vw] sm:w-[50vw] md:w-auto shrink-0 snap-center" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(5).jpeg', 4)">
+                        <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(5).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none" alt="Gallery 5" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                            <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <!-- Image 6 -->
+                    <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg w-[80vw] sm:w-[50vw] md:w-auto shrink-0 snap-center" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(6).jpeg', 5)">
+                        <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(6).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none" alt="Gallery 6" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                            <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <!-- Image 7 -->
+                    <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg w-[80vw] sm:w-[50vw] md:w-auto shrink-0 snap-center" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(7).jpeg', 6)">
+                        <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(7).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none" alt="Gallery 7" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                            <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div>
+
+                    <!-- Image 8 -->
+                    <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg w-[80vw] sm:w-[50vw] md:w-auto shrink-0 snap-center" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(1).jpeg', 0)">
+                        <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(1).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 pointer-events-none" alt="Gallery 1" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                            <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
+                        </div>
+                    </div> 
+
                 </div>
-                <!-- Image 3 -->
-                <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(3).jpeg', 2)">
-                    <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(3).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 3" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                        <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
-                    </div>
-                </div>
-                <!-- Image 4 -->
-                <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(4).jpeg', 3)">
-                    <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(4).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 4" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                        <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
-                    </div>
-                </div>
-                <!-- Image 5 -->
-                <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(5).jpeg', 4)">
-                    <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(5).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 5" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                        <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
-                    </div>
-                </div>
-                <!-- Image 6 -->
-                <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(6).jpeg', 5)">
-                    <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(6).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 6" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                        <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
-                    </div>
-                </div>
-                <!-- Image 7 -->
-                <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(7).jpeg', 6)">
-                    <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(7).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 7" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                        <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
-                    </div>
-                </div>
-                <!-- Image 8 -->
-                <div class="group relative overflow-hidden rounded-[1.5rem] glass aspect-[3/4] cursor-pointer shadow-lg" onclick="openLightbox('https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(8).jpeg', 7)">
-                    <img src="https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(8).jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gallery 8" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                        <i data-lucide="zoom-in" class="text-white w-6 h-6"></i>
-                    </div>
+
+                <!-- Navigation Arrows for Gallery (only shown on hover or desktop) -->
+                <button onclick="scrollGallery(-1)" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center bg-black/60 hover:bg-black/90 text-white rounded-full z-10 transition-all opacity-0 group-hover:opacity-100 active:scale-95 shadow-md">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </button>
+                <button onclick="scrollGallery(1)" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center bg-black/60 hover:bg-black/90 text-white rounded-full z-10 transition-all opacity-0 group-hover:opacity-100 active:scale-95 shadow-md">
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+
+                <!-- Mobile Page Indicator Dots -->
+                <div id="gallery-dots" class="flex justify-center items-center gap-2 mt-4 md:hidden">
+                    <span class="w-4 h-2 rounded-full bg-violet-400 transition-all duration-300 cursor-pointer" data-index="0"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 cursor-pointer" data-index="1"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 cursor-pointer" data-index="2"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 cursor-pointer" data-index="3"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 cursor-pointer" data-index="4"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 cursor-pointer" data-index="5"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 cursor-pointer" data-index="6"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 cursor-pointer" data-index="7"></span>
                 </div>
             </div>
         </div>
@@ -383,23 +396,23 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6 text-left max-w-lg mx-auto">
                     <div class="flex items-center gap-2">
                         <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full shrink-0"></span>
-                        <p class="font-medium">SUDIBYO + ISTRI</p>
+                        <p class="font-medium">Sudibyo + Istri</p>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full shrink-0"></span>
-                        <p class="font-medium">H SUNARYO + ISTRI</p>
+                        <p class="font-medium">H. Sunaryo + Istri</p>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full shrink-0"></span>
-                        <p class="font-medium">FAHRUL RAZI + MAYA FATIMAH</p>
+                        <p class="font-medium">Fahrul Razi + Maya Fatimah</p>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full shrink-0"></span>
-                        <p class="font-medium">RONY ADHITAMA + Dwi ringkin wulan</p>
+                        <p class="font-medium">Rony Adhitama + Dwi Ringkin Wulan</p>
                     </div>
                     <div class="flex items-center gap-2 col-span-1 md:col-span-2">
                         <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full shrink-0"></span>
-                        <p class="font-medium">EDDY SAPUTRA + ADISTA ANGGRAINI ADHITAMA</p>
+                        <p class="font-medium">Eddy Saputra + Adista Anggraini Adhitama</p>
                     </div>
                 </div>
             </div>
@@ -736,6 +749,126 @@ document.addEventListener("DOMContentLoaded", function() {
     if (guestElement) {
         guestElement.innerText = getGuestName();
     }
+
+    // ----------------------------------------
+    // INTERACTIVE GALLERY DRAG & DOTS SYNC
+    // ----------------------------------------
+    const slider = document.getElementById("swipe-gallery");
+    const dotsContainer = document.getElementById("gallery-dots");
+    let dots = [];
+    if (dotsContainer) {
+        dots = dotsContainer.querySelectorAll("span");
+    }
+
+    // Update active indicators based on scroll position
+    if (slider && dots.length > 0) {
+        let isScrolling;
+        slider.addEventListener("scroll", () => {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                const width = slider.clientWidth;
+                const scrollLeft = slider.scrollLeft;
+                const children = slider.children;
+                let activeIdx = 0;
+                let minDiff = Infinity;
+                
+                for (let i = 0; i < children.length; i++) {
+                    const child = children[i];
+                    const childCenter = child.offsetLeft + (child.clientWidth / 2);
+                    const containerCenter = scrollLeft + (width / 2);
+                    const diff = Math.abs(childCenter - containerCenter);
+                    
+                    if (diff < minDiff) {
+                        minDiff = diff;
+                        activeIdx = i;
+                    }
+                }
+                
+                dots.forEach((dot, idx) => {
+                    if (idx === activeIdx) {
+                        dot.className = "w-4 h-2 rounded-full bg-violet-400 transition-all duration-300 cursor-pointer";
+                    } else {
+                        dot.className = "w-2 h-2 rounded-full bg-white/30 transition-all duration-300 cursor-pointer";
+                    }
+                });
+            }, 50);
+        });
+
+        // Click handler to choose item via dots
+        dots.forEach((dot, idx) => {
+            dot.addEventListener("click", () => {
+                const item = slider.children[idx];
+                if (item) {
+                    slider.scrollTo({
+                        left: item.offsetLeft - (slider.clientWidth - item.clientWidth) / 2,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    }
+
+    // Desktop Mouse Drag Scroll Implementation
+    if (slider) {
+        let isDown = false;
+        let startX;
+        let scrollLeftVal;
+
+        slider.addEventListener("mousedown", (e) => {
+            isDown = true;
+            slider.style.scrollSnapType = "none";
+            slider.style.scrollBehavior = "auto";
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeftVal = slider.scrollLeft;
+        });
+
+        slider.addEventListener("mouseleave", () => {
+            if (isDown) {
+                isDown = false;
+                slider.style.scrollSnapType = "x mandatory";
+                slider.style.scrollBehavior = "smooth";
+            }
+        });
+
+        slider.addEventListener("mouseup", () => {
+            if (isDown) {
+                isDown = false;
+                slider.style.scrollSnapType = "x mandatory";
+                slider.style.scrollBehavior = "smooth";
+            }
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5; // multiplier for ease
+            slider.scrollLeft = scrollLeftVal - walk;
+        });
+    }
+
+    // Touch Swipe Gesture on full-screen Lightbox Modal
+    const lightboxModal = document.getElementById("lightbox-modal");
+    if (lightboxModal) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightboxModal.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+        }, { passive: true });
+
+        lightboxModal.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            const swipeDistance = touchEndX - touchStartX;
+            if (Math.abs(swipeDistance) > 50) { // 50px threshold value
+                if (swipeDistance < 0) {
+                    nextLightbox(); // Swipe left to view next
+                } else {
+                    prevLightbox(); // Swipe right to view prev
+                }
+            }
+        }, { passive: true });
+    }
 });
 
 // 6. Lightbox / Gallery Viewer
@@ -750,6 +883,18 @@ const galleryImages = [
     "https://raw.githubusercontent.com/shunici/wedding2026-a/refs/heads/main/a%20(8).jpeg"
 ];
 let currentLightboxIndex = -1;
+
+function scrollGallery(direction) {
+    const slider = document.getElementById("swipe-gallery");
+    if (slider) {
+        const firstChild = slider.firstElementChild;
+        const scrollAmount = firstChild ? firstChild.clientWidth + 16 : 300;
+        slider.scrollBy({
+            left: direction * scrollAmount,
+            behavior: "smooth"
+        });
+    }
+}
 
 function openLightbox(src, index = -1) {
     const modal = document.getElementById("lightbox-modal");
